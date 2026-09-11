@@ -4,32 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OJT Progression Portfolio | John Deniel C. Domalaon</title>
-    
-    <!-- Google Fonts & Lucide Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         :root {
             --mec-blue-dark: #07172b;
             --mec-blue: #0A2240;
-            --mec-blue-surface: #0f2d52;
             --mec-orange: #F26522;
-            --mec-orange-hover: #d95314;
             --mec-orange-glow: rgba(242, 101, 34, 0.22);
             --light-bg: #f8fafc;
-            --card-surface: rgba(255, 255, 255, 0.85);
-            --card-border: rgba(226, 232, 240, 0.8);
+            --card-surface: rgba(255, 255, 255, 0.92);
+            --card-border: #e2e8f0;
             --text-dark: #0f172a;
             --text-muted: #64748b;
             --white: #ffffff;
-            --radius-md: 14px;
-            --radius-lg: 20px;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 12px 30px -4px rgba(10, 34, 64, 0.08);
-            --shadow-xl: 0 24px 50px -12px rgba(10, 34, 64, 0.15);
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --shadow-md: 0 10px 25px -4px rgba(10, 34, 64, 0.08);
+            --shadow-xl: 0 20px 40px -10px rgba(10, 34, 64, 0.12);
         }
 
         * {
@@ -43,36 +33,30 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--light-bg);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(10, 34, 64, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(242, 101, 34, 0.04) 0%, transparent 45%);
-            background-attachment: fixed;
         }
 
-        /* Modern Glass Header */
+        /* Fixed Navigation Header */
         header {
             position: fixed;
             top: 15px;
             left: 50%;
             transform: translateX(-50%);
             width: min(92%, 1150px);
-            background: rgba(10, 34, 64, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(10, 34, 64, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             padding: 10px 24px;
             border-radius: 9999px;
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(7, 23, 43, 0.2);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(7, 23, 43, 0.25);
         }
 
         .brand-pill {
@@ -82,7 +66,6 @@
             color: var(--white);
             font-weight: 700;
             font-size: 0.95rem;
-            letter-spacing: -0.01em;
             text-decoration: none;
         }
 
@@ -91,40 +74,32 @@
             height: 10px;
             background-color: var(--mec-orange);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--mec-orange);
+            box-shadow: 0 0 8px var(--mec-orange);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 6px;
+            gap: 8px;
             align-items: center;
         }
 
         nav ul li a {
             color: #cbd5e1;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.85rem;
             padding: 8px 16px;
             border-radius: 9999px;
-            transition: all 0.25s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            transition: all 0.2s ease;
         }
 
         nav ul li a:hover, nav ul li a.active {
             color: var(--white);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        nav ul li a.active {
             background: var(--mec-orange);
-            box-shadow: 0 2px 10px var(--mec-orange-glow);
         }
 
-        /* Sections standard layout */
+        /* Section Setup */
         section {
             min-height: 100vh;
             padding: 120px 6% 60px 6%;
@@ -132,8 +107,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
-            z-index: 1;
         }
 
         .container {
@@ -142,79 +115,60 @@
             margin: 0 auto;
         }
 
-        /* Hero / Profile Card */
+        /* Profile Layout */
         .profile-container {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 30px;
             align-items: center;
         }
 
         .glass-card {
             background: var(--card-surface);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--card-border);
             border-radius: var(--radius-lg);
             padding: 40px;
             box-shadow: var(--shadow-xl);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-card::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--mec-orange), var(--mec-blue));
+            border-top: 5px solid var(--mec-orange);
         }
 
         .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            background: rgba(242, 101, 34, 0.1);
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(242, 101, 34, 0.12);
             color: var(--mec-orange);
             font-size: 0.78rem;
             font-weight: 700;
             border-radius: 9999px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         h1.profile-name {
-            font-size: 2.7rem;
+            font-size: 2.5rem;
             line-height: 1.15;
             font-weight: 800;
             color: var(--mec-blue);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
+            margin-bottom: 6px;
         }
 
         .profile-title {
             color: var(--mec-orange);
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .profile-meta {
             display: grid;
             grid-template-columns: auto 1fr;
-            gap: 12px 20px;
-            background: rgba(241, 245, 249, 0.7);
+            gap: 10px 20px;
+            background: #f1f5f9;
             border: 1px solid #e2e8f0;
             border-radius: var(--radius-md);
-            padding: 18px 22px;
-            margin-bottom: 24px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
             font-size: 0.92rem;
         }
 
@@ -224,17 +178,17 @@
         }
 
         .meta-value {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--mec-blue);
         }
 
         .profile-bio {
             color: #475569;
-            font-size: 1rem;
+            font-size: 0.98rem;
             line-height: 1.7;
         }
 
-        /* Modern Visual Card */
+        /* Hero Banner with puppylon.jpg */
         .hero-banner {
             border-radius: var(--radius-lg);
             position: relative;
@@ -247,7 +201,6 @@
             color: var(--white);
             overflow: hidden;
             box-shadow: var(--shadow-xl);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-banner::before {
@@ -255,12 +208,7 @@
             position: absolute;
             inset: 0;
             background: url('photos/puppylon.jpg') center/cover no-repeat;
-            opacity: 0.28;
-            transition: transform 0.6s ease;
-        }
-
-        .hero-banner:hover::before {
-            transform: scale(1.04);
+            opacity: 0.35;
         }
 
         .banner-content {
@@ -280,13 +228,11 @@
         .banner-title {
             font-size: 1.6rem;
             font-weight: 700;
-            line-height: 1.3;
         }
 
-        /* Section Titles */
+        /* Company Layout */
         .section-header {
-            margin-bottom: 28px;
-            text-align: left;
+            margin-bottom: 25px;
             width: 100%;
         }
 
@@ -294,19 +240,11 @@
             font-size: 2rem;
             color: var(--mec-blue);
             font-weight: 800;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            border-bottom: 3px solid var(--mec-orange);
+            padding-bottom: 8px;
+            display: inline-block;
         }
 
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-top: 6px;
-        }
-
-        /* Company Section Elements */
         .company-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -319,36 +257,31 @@
             border-radius: var(--radius-lg);
             padding: 30px;
             box-shadow: var(--shadow-md);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .company-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            border-color: rgba(242, 101, 34, 0.3);
-        }
-
-        .company-card-header {
+        .company-logo-wrap {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            padding: 14px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
+            justify-content: center;
+            min-height: 80px;
         }
 
-        .icon-box {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: rgba(10, 34, 64, 0.06);
-            display: grid;
-            place-content: center;
-            color: var(--mec-blue);
+        .company-logo-wrap img {
+            max-height: 55px;
+            max-width: 100%;
+            object-fit: contain;
         }
 
-        .company-card-header h3 {
+        .company-card h3 {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--mec-blue);
+            margin-bottom: 15px;
         }
 
         .company-card ul {
@@ -357,39 +290,24 @@
             flex-direction: column;
             gap: 10px;
             color: #475569;
-            font-size: 0.94rem;
+            font-size: 0.92rem;
+        }
+
+        .company-card ul li::before {
+            content: "•";
+            color: var(--mec-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
         }
 
         .company-card ul li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            padding-left: 1.2em;
         }
 
-        .company-card ul li i {
-            color: var(--mec-orange);
-            flex-shrink: 0;
-            margin-top: 4px;
-        }
-
-        .pills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .tech-pill {
-            background: #f1f5f9;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--mec-blue);
-            border: 1px solid #e2e8f0;
-        }
-
-        /* --- MODERN UNIFIED PDF DASHBOARD WORKSTATION --- */
+        /* Document Workspace */
         .workspace-card {
             background: var(--white);
             border-radius: var(--radius-lg);
@@ -400,10 +318,8 @@
             height: 720px;
             overflow: hidden;
             width: 100%;
-            position: relative;
         }
 
-        /* Sidebar Navigation */
         .workspace-sidebar {
             background: #f8fafc;
             border-right: 1px solid #e2e8f0;
@@ -414,48 +330,31 @@
         }
 
         .sidebar-header {
-            padding: 16px 20px;
+            padding: 16px;
             border-bottom: 1px solid #e2e8f0;
             background: #ffffff;
         }
 
-        .search-box {
-            position: relative;
-            width: 100%;
-        }
-
         .search-box input {
             width: 100%;
-            padding: 8px 12px 8px 34px;
+            padding: 9px 12px;
             border-radius: 8px;
             border: 1px solid #cbd5e1;
             font-size: 0.85rem;
-            font-family: inherit;
             outline: none;
-            transition: all 0.2s ease;
         }
 
         .search-box input:focus {
             border-color: var(--mec-orange);
-            box-shadow: 0 0 0 3px var(--mec-orange-glow);
-        }
-
-        .search-box i {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #94a3b8;
-            font-size: 0.85rem;
         }
 
         .file-tree {
-            padding: 14px;
+            padding: 12px;
             overflow-y: auto;
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
         }
 
         .tree-group-title {
@@ -464,52 +363,38 @@
             text-transform: uppercase;
             color: #94a3b8;
             letter-spacing: 0.08em;
-            padding: 10px 10px 4px 10px;
+            padding: 12px 10px 4px 10px;
         }
 
         .file-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             padding: 10px 14px;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 0.88rem;
             font-weight: 600;
             color: #334155;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: background 0.15s ease, color 0.15s ease;
             user-select: none;
-            border: 1px solid transparent;
         }
 
         .file-item:hover {
-            background: #f1f5f9;
+            background: #e2e8f0;
             color: var(--mec-blue);
         }
 
         .file-item.active {
-            background: var(--mec-blue);
+            background: var(--mec-orange);
             color: var(--white);
-            box-shadow: 0 4px 12px rgba(10, 34, 64, 0.2);
         }
 
-        .file-item.active i {
-            color: var(--mec-orange);
-        }
-
-        .file-item i {
-            font-size: 1rem;
-            color: #64748b;
-            transition: color 0.2s ease;
-        }
-
-        /* Workspace Main Viewer Panel */
         .workspace-viewer {
             display: flex;
             flex-direction: column;
             height: 100%;
             background: #f1f5f9;
-            position: relative;
         }
 
         .viewer-toolbar {
@@ -523,47 +408,33 @@
         }
 
         .current-doc-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 0.92rem;
             color: var(--mec-blue);
-        }
-
-        .toolbar-actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .tool-btn {
             background: transparent;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 6px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 6px 14px;
             font-size: 0.8rem;
             font-weight: 600;
-            color: #475569;
+            color: #334155;
             cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
             text-decoration: none;
         }
 
         .tool-btn:hover {
-            background: #f8fafc;
-            color: var(--mec-orange);
-            border-color: var(--mec-orange);
+            background: var(--mec-blue);
+            color: var(--white);
+            border-color: var(--mec-blue);
         }
 
         .iframe-container {
             flex: 1;
             width: 100%;
             height: 100%;
-            position: relative;
         }
 
         .iframe-container iframe {
@@ -571,99 +442,37 @@
             height: 100%;
             border: none;
             display: block;
+            background: #ffffff;
         }
 
-        /* Fallback / Loader State */
-        .viewer-loader {
-            position: absolute;
-            inset: 0;
-            background: rgba(248, 250, 252, 0.9);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            z-index: 10;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            opacity: 0;
-        }
-
-        .viewer-loader.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .spinner {
-            width: 38px;
-            height: 38px;
-            border: 3px solid rgba(242, 101, 34, 0.15);
-            border-top-color: var(--mec-orange);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Footer */
         footer {
             background: var(--mec-blue-dark);
             color: #94a3b8;
-            padding: 40px 6% 30px 6%;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
-        footer strong {
-            color: var(--white);
-        }
-
-        /* Responsive Mobile Behavior */
         @media (max-width: 900px) {
-            header {
-                width: 95%;
-                padding: 10px 16px;
-            }
-            
-            nav ul {
-                display: none; /* Can be expanded as drawer */
-            }
-
-            .profile-container {
-                grid-template-columns: 1fr;
-            }
-
-            .company-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .workspace-card {
-                grid-template-columns: 1fr;
-                height: 600px;
-            }
-
-            .workspace-sidebar {
-                max-height: 240px;
-            }
+            nav ul { display: none; }
+            .profile-container, .company-grid { grid-template-columns: 1fr; }
+            .workspace-card { grid-template-columns: 1fr; height: 600px; }
+            .workspace-sidebar { max-height: 220px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Modern Floating Island Header -->
     <header>
         <a href="#profile" class="brand-pill">
             <span class="brand-dot"></span>
-            <span>Domalaon.dev</span>
+            <span>John Deniel C. Domalaon</span>
         </a>
         <nav>
             <ul>
-                <li><a href="#profile" class="nav-link active"><i data-lucide="user" style="width: 14px;"></i> Profile</a></li>
-                <li><a href="#company" class="nav-link"><i data-lucide="building" style="width: 14px;"></i> Company</a></li>
-                <li><a href="#documents" class="nav-link"><i data-lucide="file-check" style="width: 14px;"></i> Progression Docs</a></li>
+                <li><a href="#profile" class="nav-link active">Profile</a></li>
+                <li><a href="#company" class="nav-link">Company</a></li>
+                <li><a href="#documents" class="nav-link">Documents</a></li>
             </ul>
         </nav>
     </header>
@@ -672,13 +481,9 @@
     <section id="profile">
         <div class="container profile-container">
             <div class="glass-card">
-                <span class="badge"><i data-lucide="cpu" style="width: 13px;"></i> Computer Engineering</span>
+                <span class="badge">Computer Engineering</span>
                 <h1 class="profile-name">John Deniel C. Domalaon</h1>
-                <div class="profile-title">
-                    <span>OJT Trainee</span>
-                    <span style="color: #cbd5e1;">&bull;</span>
-                    <span style="color: var(--mec-blue);">PUP Manila</span>
-                </div>
+                <div class="profile-title">OJT Trainee &bull; PUP Manila</div>
 
                 <div class="profile-meta">
                     <span class="meta-label">Degree</span>
@@ -698,7 +503,7 @@
 
             <div class="hero-banner">
                 <div class="banner-content">
-                    <div class="banner-tag">Polytechnic University of the Philippines</div>
+                    <div class="banner-tag">PUP Manila</div>
                     <div class="banner-title">Engineering Systems & Professional Immersion</div>
                 </div>
             </div>
@@ -709,91 +514,64 @@
     <section id="company" style="background: rgba(241, 245, 249, 0.5);">
         <div class="container">
             <div class="section-header">
-                <h2><i data-lucide="building-2" style="color: var(--mec-orange);"></i> MEC Networks Corporation</h2>
-                <p>Enterprise Information and Communications Technology (ICT) partner & solutions distributor.</p>
+                <h2>MEC Networks Corporation</h2>
+                <p style="color: var(--text-muted); margin-top: 6px;">Enterprise Information and Communications Technology (ICT) partner & solutions distributor.</p>
             </div>
 
             <div class="company-grid">
                 <div class="company-card">
-                    <div class="company-card-header">
-                        <div class="icon-box"><i data-lucide="globe"></i></div>
-                        <h3>Company Overview</h3>
+                    <div class="company-logo-wrap">
+                        <!-- Corrected path with URL-encoded space -->
+                        <img src="photos/mec%20logo.jpg" alt="MEC Networks Corporation Logo" onerror="this.style.display='none'">
                     </div>
+                    <h3>Company Overview</h3>
                     <ul>
-                        <li><i data-lucide="check-circle-2" style="width: 16px;"></i> Premier ICT distributor and solutions provider in the Philippines.</li>
-                        <li><i data-lucide="check-circle-2" style="width: 16px;"></i> Founded in 1995 with over 30 years of industry leadership.</li>
-                        <li><i data-lucide="check-circle-2" style="width: 16px;"></i> Core mission to bridge global hardware/software manufacturers to the local enterprise market.</li>
-                        <li><i data-lucide="check-circle-2" style="width: 16px;"></i> Headquartered at MEC Centre in Quezon City, NCR with regional hubs in Cebu City.</li>
-                        <li><i data-lucide="check-circle-2" style="width: 16px;"></i> Executive Leadership under President Merrick Chua.</li>
+                        <li>Premier ICT distributor and solutions provider in the Philippines.</li>
+                        <li>Founded in 1995 with over 30 years of industry leadership.</li>
+                        <li>Bridges global hardware/software manufacturers to the local enterprise market.</li>
+                        <li>Headquartered at MEC Centre in Quezon City, NCR with branches in Cebu City.</li>
+                        <li>Led by President Merrick Chua.</li>
                     </ul>
                 </div>
 
                 <div class="company-card">
-                    <div class="company-card-header">
-                        <div class="icon-box"><i data-lucide="server"></i></div>
-                        <h3>Core Business & Verticals</h3>
-                    </div>
+                    <h3>Core Business & Verticals</h3>
                     <ul>
-                        <li><i data-lucide="chevron-right" style="width: 16px;"></i> <strong>Networking & Connectivity:</strong> Switching, routing, structured cabling, and enterprise wireless infrastructure.</li>
-                        <li><i data-lucide="chevron-right" style="width: 16px;"></i> <strong>Cybersecurity & Surveillance:</strong> Threat surface assessment, zero-trust infrastructure, and automated physical security.</li>
-                        <li><i data-lucide="chevron-right" style="width: 16px;"></i> <strong>Unified Communications:</strong> Digital telephony, team workspace endpoints, and collaboration suites.</li>
-                        <li><i data-lucide="chevron-right" style="width: 16px;"></i> <strong>Data & Infrastructure:</strong> Cloud hosting, virtualization, enterprise storage arrays, and precision power management.</li>
+                        <li><strong>Networking & Connectivity:</strong> Switching, routing, structured cabling, and wireless infrastructure.</li>
+                        <li><strong>Cybersecurity & Surveillance:</strong> Threat assessment, zero-trust infrastructure, and physical surveillance.</li>
+                        <li><strong>Unified Communications:</strong> Enterprise telephony and digital workplace collaboration suites.</li>
+                        <li><strong>Data & Infrastructure:</strong> Cloud hosting, virtualization, storage arrays, and power management.</li>
                     </ul>
-
-                    <div class="pills-container">
-                        <span class="tech-pill">Enterprise Switching</span>
-                        <span class="tech-pill">Cybersecurity</span>
-                        <span class="tech-pill">Cloud Infrastructure</span>
-                        <span class="tech-pill">Physical Security</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Space-Friendly Unified Workstation (Before, During & After Docs) -->
+    <!-- 3. Documents Workspace -->
     <section id="documents">
         <div class="container">
             <div class="section-header">
-                <h2><i data-lucide="folder-archive" style="color: var(--mec-orange);"></i> OJT Portfolio Documents</h2>
-                <p>Browse submissions, weekly narrative docus, reports, and clearance forms via the interactive workspace.</p>
+                <h2>OJT Progression Documents</h2>
+                <p style="color: var(--text-muted); margin-top: 6px;">Select any document to view its submission file in the workstation.</p>
             </div>
 
             <div class="workspace-card">
-                <!-- Sidebar File Navigation -->
                 <div class="workspace-sidebar">
                     <div class="sidebar-header">
                         <div class="search-box">
-                            <i data-lucide="search"></i>
-                            <input type="text" id="docSearch" placeholder="Filter documents (e.g., Week 6, Waiver)..." onkeyup="filterDocs()">
+                            <input type="text" id="docSearch" placeholder="Search documents (e.g. Week 6, Waiver)..." onkeyup="filterDocs()">
                         </div>
                     </div>
-                    
-                    <div class="file-tree" id="fileTree">
-                        <!-- Populated dynamically via JS below -->
-                    </div>
+                    <div class="file-tree" id="fileTree"></div>
                 </div>
 
-                <!-- PDF Embedded Preview Panel -->
                 <div class="workspace-viewer">
                     <div class="viewer-toolbar">
-                        <div class="current-doc-info">
-                            <i data-lucide="file-text" style="color: var(--mec-orange); width: 18px;"></i>
-                            <span id="activeDocTitle">Cover Page</span>
-                        </div>
-                        <div class="toolbar-actions">
-                            <a id="directViewBtn" href="documents/before/cover_page.pdf" target="_blank" class="tool-btn" title="Open full document in a separate browser tab">
-                                <i data-lucide="external-link" style="width: 14px;"></i> Open Tab
-                            </a>
-                        </div>
+                        <div class="current-doc-info" id="activeDocTitle">Cover Page</div>
+                        <a id="directViewBtn" href="before/cover_page.pdf" target="_blank" class="tool-btn">Open File ↗</a>
                     </div>
-
                     <div class="iframe-container">
-                        <div id="loader" class="viewer-loader">
-                            <div class="spinner"></div>
-                            <span style="font-size: 0.85rem; font-weight: 600; color: #475569;">Fetching Document...</span>
-                        </div>
-                        <iframe id="pdfViewer" src="documents/before/cover_page.pdf" title="OJT Document Viewer"></iframe>
+                        <iframe id="pdfViewer" src="before/cover_page.pdf" title="Document Viewer"></iframe>
                     </div>
                 </div>
             </div>
@@ -801,57 +579,47 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 <strong>John Deniel C. Domalaon</strong> &bull; Department of Computer Engineering &bull; PUP Manila</p>
+        <p>&copy; 2026 John Deniel C. Domalaon &bull; Department of Computer Engineering &bull; PUP Manila</p>
     </footer>
 
-    <!-- DYNAMIC DOCUMENT REGISTRY & CONTROLLER -->
+    <!-- Document Registry mapped directly to your folder tree -->
     <script>
-        // Centralized registry: Add or modify your documents directly here without breaking HTML layout
         const ojtDocs = [
-            // Phase 1: Pre-Internship Requirements
-            { group: "Before OJT", title: "Cover Page", path: "documents/before/cover_page.pdf" },
-            { group: "Before OJT", title: "Approval Sheet", path: "documents/before/approval_sheet.pdf" },
-            { group: "Before OJT", title: "Company Profile", path: "documents/before/company_profile.pdf" },
-            { group: "Before OJT", title: "PUP-MEC MOA", path: "documents/before/PUP_MEC MOA.pdf" },
-            { group: "Before OJT", title: "Letter of Intent", path: "documents/before/letter_of_intent.pdf" },
-            { group: "Before OJT", title: "Letter of Endorsement", path: "documents/before/letter_of_endorsement.pdf" },
-            { group: "Before OJT", title: "Student Waiver", path: "documents/before/student_waiver.pdf" },
-            { group: "Before OJT", title: "Internship Agreement", path: "documents/before/internship_agreement.pdf" },
-            { group: "Before OJT", title: "Consent Form", path: "documents/before/consent_form.pdf" },
-            { group: "Before OJT", title: "Curriculum Vitae", path: "documents/before/cv.pdf" },
-            { group: "Before OJT", title: "Insurance Copy", path: "documents/before/insurance.pdf" },
-            { group: "Before OJT", title: "Medical Certificate", path: "documents/before/medical_certificate.pdf" },
+            // Before OJT (Folder: before/)
+            { group: "Before OJT", title: "Cover Page", path: "before/cover_page.pdf" },
+            { group: "Before OJT", title: "Approval Sheet", path: "before/approval_sheet.pdf" },
+            { group: "Before OJT", title: "Company Profile", path: "before/company_profile.pdf" },
+            { group: "Before OJT", title: "PUP-MEC MOA", path: "before/PUP_MEC MOA.pdf" },
+            { group: "Before OJT", title: "Letter of Intent", path: "before/letter_of_intent.pdf" },
+            { group: "Before OJT", title: "Letter of Endorsement", path: "before/letter_of_endorsement.pdf" },
+            { group: "Before OJT", title: "Student Waiver", path: "before/student_waiver.pdf" },
+            { group: "Before OJT", title: "Internship Agreement", path: "before/internship_agreement.pdf" },
+            { group: "Before OJT", title: "Consent Form", path: "before/consent_form.pdf" },
+            { group: "Before OJT", title: "CV", path: "before/cv.pdf" },
+            { group: "Before OJT", title: "Insurance", path: "before/insurance.pdf" },
+            { group: "Before OJT", title: "Medical Certificate", path: "before/medical_certificate.pdf" },
 
-            // Phase 2: Weekly Progress Docu
-            { group: "Weekly Documentation", title: "Week 1 Docu", path: "documents/weekly-report-docus/Week-1-Docu.docx.pdf" },
-            { group: "Weekly Documentation", title: "Week 2 Docu", path: "documents/weekly-report-docus/Week2_docu.docx.pdf" },
-            { group: "Weekly Documentation", title: "Week 3 Docu", path: "documents/weekly-report-docus/Week3_docu.docx.pdf" },
-            { group: "Weekly Documentation", title: "Week 4 Docu", path: "documents/weekly-report-docus/Week4_docu.docx.pdf" },
-            { group: "Weekly Documentation", title: "Week 5 Docu", path: "documents/weekly-report-docus/Week5_docu.docx.pdf" },
-            { group: "Weekly Documentation", title: "Week 6 Docu", path: "documents/weekly-report-docus/Week6_docu.docx.pdf" },
-            { group: "Weekly Documentation", title: "Week 7 Docu", path: "documents/weekly-report-docus/docu_week_7.pdf" },
-            { group: "Weekly Documentation", title: "Week 8 Docu", path: "documents/weekly-report-docus/docu_week_8.pdf" },
-            { group: "Weekly Documentation", title: "Week 9 Docu", path: "documents/weekly-report-docus/docu_week_9.pdf" },
-            { group: "Weekly Documentation", title: "Week 10 Docu", path: "documents/weekly-report-docus/docu_week_10.pdf" },
+            // Weekly Documentation (Folder: documents/)
+            { group: "Weekly Documentation", title: "Week 1 Docu", path: "documents/Week-1-Docu.docx.pdf" },
+            { group: "Weekly Documentation", title: "Week 2 Docu", path: "documents/Week2_docu.docx.pdf" },
+            { group: "Weekly Documentation", title: "Week 3 Docu", path: "documents/Week3_docu.docx.pdf" },
+            { group: "Weekly Documentation", title: "Week 4 Docu", path: "documents/Week4_docu.docx.pdf" },
+            { group: "Weekly Documentation", title: "Week 5 Docu", path: "documents/Week5_docu.docx.pdf" },
+            { group: "Weekly Documentation", title: "Week 6 Docu", path: "documents/Week6_docu.docx.pdf" },
 
-            // Phase 3: Weekly Formal Reports
-            { group: "Weekly Reports", title: "Week 1 Report", path: "documents/weekly-report-docus/Week-1-Report.docx.pdf" },
-            { group: "Weekly Reports", title: "Week 2 Report", path: "documents/weekly-report-docus/Week2_report.docx.pdf" },
-            { group: "Weekly Reports", title: "Week 3 Report", path: "documents/weekly-report-docus/Week3_report.docx.pdf" },
-            { group: "Weekly Reports", title: "Week 4 Report", path: "documents/weekly-report-docus/Week4_report.docx.pdf" },
-            { group: "Weekly Reports", title: "Week 5 Report", path: "documents/weekly-report-docus/Week5_report.docx.pdf" },
-            { group: "Weekly Reports", title: "Week 6 Report", path: "documents/weekly-report-docus/Week6_report.docx.pdf" },
-            { group: "Weekly Reports", title: "Week 7 Report", path: "documents/weekly-report-docus/report_week_7.pdf" },
-            { group: "Weekly Reports", title: "Week 8 Report", path: "documents/weekly-report-docus/report_week_8.pdf" },
-            { group: "Weekly Reports", title: "Week 9 Report", path: "documents/weekly-report-docus/report_week_9.pdf" },
-            { group: "Weekly Reports", title: "Week 10 Report", path: "documents/weekly-report-docus/report_week_10.pdf" },
+            // Weekly Reports (Folder: documents/)
+            { group: "Weekly Reports", title: "Week 1 Report", path: "documents/Week-1-Report.docx.pdf" },
+            { group: "Weekly Reports", title: "Week 2 Report", path: "documents/Week2_report.docx.pdf" },
+            { group: "Weekly Reports", title: "Week 3 Report", path: "documents/Week3_report.docx.pdf" },
+            { group: "Weekly Reports", title: "Week 4 Report", path: "documents/Week4_report.docx.pdf" },
+            { group: "Weekly Reports", title: "Week 5 Report", path: "documents/Week5_report.docx.pdf" },
+            { group: "Weekly Reports", title: "Week 6 Report", path: "documents/Week6_report.docx.pdf" },
 
-            // Phase 4: Post-Internship Clearances
-            { group: "After OJT", title: "Evaluation for Supervisor", path: "documents/eval_supervisor.pdf" },
-            { group: "After OJT", title: "Performance Evaluation Grading", path: "documents/performance_eval.pdf" }
+            // After OJT (Folder: after/)
+            { group: "After OJT", title: "Evaluation for Supervisor", path: "after/eval_supervisor.pdf" },
+            { group: "After OJT", title: "Performance Evaluation Grading", path: "after/performance_eval.pdf" }
         ];
 
-        // Render file tree automatically
         function renderFileTree() {
             const treeContainer = document.getElementById('fileTree');
             treeContainer.innerHTML = "";
@@ -859,96 +627,38 @@
             const groups = [...new Set(ojtDocs.map(d => d.group))];
 
             groups.forEach(groupName => {
-                const groupTitle = document.createElement('div');
-                groupTitle.className = 'tree-group-title';
-                groupTitle.textContent = groupName;
-                treeContainer.appendChild(groupTitle);
+                const title = document.createElement('div');
+                title.className = 'tree-group-title';
+                title.innerText = groupName;
+                treeContainer.appendChild(title);
 
-                const docsInGroup = ojtDocs.filter(d => d.group === groupName);
-
-                docsInGroup.forEach((doc, index) => {
+                const docs = ojtDocs.filter(d => d.group === groupName);
+                docs.forEach((doc, idx) => {
                     const item = document.createElement('div');
-                    item.className = `file-item ${groupName === 'Before OJT' && index === 0 ? 'active' : ''}`;
-                    item.setAttribute('data-path', doc.path);
+                    item.className = 'file-item' + (groupName === 'Before OJT' && idx === 0 ? ' active' : '');
                     item.setAttribute('data-title', doc.title);
-                    item.onclick = () => selectDocument(doc.path, doc.title, item);
-                    
-                    item.innerHTML = `
-                        <i data-lucide="file"></i>
-                        <span>${doc.title}</span>
-                    `;
+                    item.innerHTML = '📄 ' + doc.title;
+                    item.onclick = function() {
+                        document.querySelectorAll('.file-item').forEach(el => el.classList.remove('active'));
+                        item.classList.add('active');
+                        document.getElementById('pdfViewer').src = doc.path;
+                        document.getElementById('activeDocTitle').innerText = doc.title;
+                        document.getElementById('directViewBtn').href = doc.path;
+                    };
                     treeContainer.appendChild(item);
                 });
             });
-
-            lucide.createIcons();
         }
 
-        // Swapping logic with loading indicators and direct link updates
-        function selectDocument(filePath, docTitle, elementRef) {
-            const iframe = document.getElementById('pdfViewer');
-            const loader = document.getElementById('loader');
-            const directLink = document.getElementById('directViewBtn');
-            const titleElement = document.getElementById('activeDocTitle');
-
-            // Set UI active state
-            document.querySelectorAll('.file-item').forEach(el => el.classList.remove('active'));
-            elementRef.classList.add('active');
-
-            // Update title and direct open fallback
-            titleElement.textContent = docTitle;
-            directLink.href = filePath;
-
-            // Trigger loader animation
-            loader.classList.add('active');
-            iframe.src = filePath;
-
-            iframe.onload = () => {
-                loader.classList.remove('active');
-            };
-        }
-
-        // Fast client-side search/filter
         function filterDocs() {
-            const query = document.getElementById('docSearch').value.toLowerCase();
-            const items = document.querySelectorAll('.file-item');
-            
-            items.forEach(item => {
-                const title = item.getAttribute('data-title').toLowerCase();
-                if (title.includes(query)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
+            const val = document.getElementById('docSearch').value.toLowerCase();
+            document.querySelectorAll('.file-item').forEach(el => {
+                const title = el.getAttribute('data-title').toLowerCase();
+                el.style.display = title.includes(val) ? 'flex' : 'none';
             });
         }
 
-        // Active link tracking on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            let current = "";
-
-            sections.forEach(sec => {
-                const secTop = sec.offsetTop - 150;
-                if (window.scrollY >= secTop) {
-                    current = sec.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Initialize on DOM ready
-        document.addEventListener('DOMContentLoaded', () => {
-            renderFileTree();
-            lucide.createIcons();
-        });
+        window.addEventListener('DOMContentLoaded', renderFileTree);
     </script>
 </body>
 </html>
